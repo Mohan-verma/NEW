@@ -38,10 +38,14 @@ httpOption = {
   headers : new HttpHeaders ({'content-type' :'application/json'})
 }
 addHero(hero: Hero): Observable<Hero> {
-  return this.http.post<Hero>(this.heroesUrl, hero, this.httpOption).pipe(
-    tap((newHero: Hero) => this.log(`added hero w/ id=${newHero.id}`)),
-    
-  );
+  return this.http.post<Hero>(this.heroesUrl, hero, this.httpOption)
+  
 }
+deleteHero(hero: Hero | number): Observable<Hero> {
+  const id = typeof hero === 'number' ? hero : hero.id;
+  const url = `${this.heroesUrl}/${id}`;
+  return this.http.delete<Hero>(url, this.httpOption)
+}
+
 
 }
