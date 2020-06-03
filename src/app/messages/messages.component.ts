@@ -9,6 +9,22 @@ import {MessageService} from '../message.service';
 export class MessagesComponent implements OnInit {
 
   constructor(public messageService:MessageService) { }
+public show :boolean = false;
+  public buttonName : any ="show";
+
+
+
+toggle(){
+this.show =!this.show;
+if(this.show){
+
+this.buttonName = "hide";}
+else {
+  this.buttonName="show";
+}
+}
+
+
 
   ngOnInit(): void {
   }

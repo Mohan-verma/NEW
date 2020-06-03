@@ -20,7 +20,9 @@ export class HeroService {
 
   getHeroes(): Observable<Hero[]> {
     this.messageService.add('HeroService: fetched heroes');
-  return this.http.get<Hero[]>(this.heroesUrl)
+  return this.http.get<Hero[]>(this.heroesUrl);
+ 
+  
     }
 private handleError<T>(operation='operation',result?:T){
 }
@@ -28,7 +30,12 @@ getHero(id: number): Observable<Hero> {
   const url = `${this.heroesUrl}/${id}`;
   return this.http.get<Hero>(url);
 }
-  private log(message: string) {
+shoW(){
+ this.getHeroes ;
+
+}
+
+ private log(message: string) {
     this.messageService.add(`HeroService: ${message}`);
   }
   updateHero(hero: Hero): Observable<any> {
