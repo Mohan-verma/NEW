@@ -30,10 +30,7 @@ getHero(id: number): Observable<Hero> {
   const url = `${this.heroesUrl}/${id}`;
   return this.http.get<Hero>(url);
 }
-shoW(){
- this.getHeroes ;
 
-}
 
  private log(message: string) {
     this.messageService.add(`HeroService: ${message}`);

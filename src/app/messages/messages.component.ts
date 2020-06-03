@@ -18,7 +18,8 @@ toggle(){
 this.show =!this.show;
 if(this.show){
 
-this.buttonName = "hide";}
+this.buttonName = "hide";
+}
 else {
   this.buttonName="show";
 }
